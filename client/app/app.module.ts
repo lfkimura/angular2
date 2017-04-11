@@ -5,14 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
 import { FotoModule } from './foto/foto.module';
 import { HttpModule } from '@angular/http';
-import { PainelModule } from './painel/painel.module'
+import { PainelModule } from './painel/painel.module';
 import { CadastroComponent }   from './cadastro/cadastro.component'; // importou
 import { ListagemComponent }   from './listagem/listagem.component'; // importou
-import { routing  } from './app.routes';
+
+import { routing } from './app.routes';
 
 @NgModule({
-  imports:      [ BrowserModule, FotoModule, HttpModule, PainelModule,routing ],
+  imports:      [ BrowserModule, FotoModule, HttpModule, PainelModule, routing ],
   declarations: [ AppComponent, CadastroComponent, ListagemComponent ],
-  bootstrap:    [ CadastroComponent ]
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
