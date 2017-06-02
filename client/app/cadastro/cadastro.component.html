@@ -2,26 +2,29 @@
 <h1 class="text-center">Cadastro de Fotos</h1>
 <div class="container">
 
-    <form #meuForm="ngForm" (submit)='cadastrar($event)' class="row">
+    <form  [formGroup]="meuForm" (submit)='cadastrar($event)' class="row">
         <div class="col-md-6">
             <div class="form-group">
                 <label>Título</label>
-                <input required #titulo = "ngModel" [(ngModel)]="foto.titulo" name="titulo" class="form-control"  autocomplete="off">    
-                <span *ngIf="titulo.invalid" class="form-control alert-danger">
+                <input required  formControlName="titulo"  [(ngModel)]="foto.titulo" name="titulo" class="form-control"  autocomplete="off">    
+                <span *ngIf="meuForm.controls.titulo.invalid" class="form-control alert-danger">
                     Título obrigatório
                 </span> 
             </div>
             <div class="form-group">
                 <label>URL</label>
-                <input [(ngModel)]="foto.url" name="url" class="form-control"  autocomplete="off">
+                <input [(ngModel)]="foto.url" formControlName="url"  name="url" class="form-control"  autocomplete="off">
+                <span *ngIf="meuForm.controls.url.invalid" class="form-control alert-danger">
+                    URL obrigatória
+                </span>     
             </div>
             <div class="form-group">
                 <label>Descrição</label>
-                <textarea [(ngModel)]="foto.descricao" name="descricao" class="form-control"  autocomplete="off">
+                <textarea [(ngModel)]="foto.descricao" formControlName="descricao"  name="descricao" class="form-control"  autocomplete="off">
                 </textarea>
             </div>
 
-            <button [disabled]="meuForm.form.invalid" type="submit" class="btn btn-primary">
+            <button [disabled]="meuForm.invalid" type="submit" class="btn btn-primary">
                 Salvar
             </button>
              <a [routerLink]="['']" class="btn btn-primary">Voltar</a>
