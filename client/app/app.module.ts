@@ -1,17 +1,19 @@
 import 'rxjs/add/operator/map';
-
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
-import { FotoModule } from './foto/foto.module';
+import { ListagemComponent }   from './listagem/listagem.component';
+import { CadastroComponent }   from './cadastro/cadastro.component';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
+import { FotoModule } from './foto/foto.module';
 import { PainelModule } from './painel/painel.module';
-import { CadastroComponent }   from './cadastro/cadastro.component'; // importou
-import { ListagemComponent }   from './listagem/listagem.component'; // importou
-
-// Importa o módulo. Não esqueça de adicioná-lo no array de imports!
 import { routing } from './app.routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// importando o novo módulo! Não esqueça de adicioná-lo também no array da propriedade imports
+
+import { BotaoModule } from './botao/botao.module';
 
 @NgModule({
   imports:      [ 
@@ -20,8 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PainelModule, 
     FotoModule,
     routing,
-    FormsModule, 
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    BotaoModule
   ],
   declarations: [ AppComponent, ListagemComponent, CadastroComponent ],
   bootstrap:    [ AppComponent ]
