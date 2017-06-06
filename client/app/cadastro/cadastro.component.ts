@@ -33,6 +33,7 @@ export class CadastroComponent {
                     .subscribe(
                         foto => this.foto = foto,
                         erro => console.log(erro));    
+                        
             }} );
 
         this.meuForm = fb.group({
@@ -47,10 +48,11 @@ export class CadastroComponent {
          // cria uma instância de Headers
         this.service.cadastra(this.foto)
         .subscribe((x) => {
+                this.mensagem = x.mensagem;
                 console.log(x);
                 this.foto = new FotoComponent();
-                console.log('Foto salva com sucesso');
-                this.router.navigate(['']);
+                if(!x.inclusao)
+                 this.router.navigate(['']);
             }, erro =>  console.log(erro));
         console.log(this.foto);
     }
