@@ -4,6 +4,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label>Título</label>
+                 <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
                 <input required  formControlName="titulo"  [(ngModel)]="foto.titulo" name="titulo" class="form-control"  autocomplete="off">    
                 <div *ngIf="!meuForm.controls.titulo.valid">
 
