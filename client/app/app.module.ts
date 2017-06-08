@@ -16,7 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BotaoModule } from './botao/botao.module';
 
 @NgModule({
-  imports:      [ 
+  imports: [ 
     BrowserModule, 
     HttpModule, 
     PainelModule, 

@@ -4,9 +4,7 @@ import { Component, Input, ViewEncapsulation  } from  '@angular/core';
     moduleId: module.id,
     selector: 'foto',
     templateUrl: './foto.component.html',
-    styleUrls: ['./foto.component.css'] ,
-    
-    encapsulation: ViewEncapsulation.Native
+    styleUrls: ['./foto.component.css'] 
 })
 export class FotoComponent {
     @Input() titulo;
