@@ -14,7 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // importando o novo módulo! Não esqueça de adicioná-lo também no array da propriedade imports
 
 import { BotaoModule } from './botao/botao.module';
-
+import { ModalModule } from './modal/modal.module';
 @NgModule({
   imports: [ 
     BrowserModule, 
@@ -24,7 +24,8 @@ import { BotaoModule } from './botao/botao.module';
     routing,
     FormsModule,
     ReactiveFormsModule,
-    BotaoModule
+    BotaoModule,
+    ModalModule
   ],
   declarations: [ AppComponent, ListagemComponent, CadastroComponent ],
   bootstrap:    [ AppComponent ]

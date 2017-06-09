@@ -29,8 +29,9 @@
             
             <botao
                 nome="Remover"
-                estilo="btn-danger btn-block" (acao)="remove(foto,painel)">
+                estilo="btn-danger btn-block" (acao)="modal.show()">
             </botao>
+            <modal #modal frase="Tem certeza que deseja remover esta foto?" (confirma)="remove(foto,painel)"></modal>
         </painel>
     </div><!-- fim row -->
 </div>
